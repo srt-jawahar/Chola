@@ -10,6 +10,23 @@ import { LoginComponent } from './layouts/auth/components/login/login.component'
 import {CheckboxModule} from 'primeng/checkbox';
 import {PanelModule} from 'primeng/panel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { SharedModule } from './shared/shared.module';
+
+
+export function clearState(reducer: (arg0: any, arg1: { type: string; }) => any) {
+  return function (state: any, action: { type: string; }) {
+    if (action.type === 'logout') {
+      state = undefined;
+    }
+
+    return reducer(state, action);
+  };
+}
+
 
 
 @NgModule({
@@ -28,7 +45,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RippleModule,
     CheckboxModule,
     PanelModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoreModule.forRoot({}, { metaReducers: [clearState] }),
+    StoreDevtoolsModule.instrument({
+      name: 'Ticket Management Application',
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    AppRoutingModule,
+    SharedModule,
+    EffectsModule.forRoot([]),
     
   ],
   providers: [],

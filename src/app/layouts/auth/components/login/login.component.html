@@ -1,46 +1,51 @@
 <div class ="card">
-    <div class="flex flex-row h-screen align-content-center card-container yellow-container" style =" border: solid green;">
-        <div class="flex align-items-center justify-content-center "  style =" border: solid red; min-height: 50px !important;min-width: 200px;" >1cbjc
-        sbcjasb
-    JSCJAVJ</div>
-        <div class="flex align-items-center" style =" border: solid blue;">
-            <div class ="align-items-center">
-                <form>
-                    <p-panel header="Login Example">
-                        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
-                            <div class="ui-grid-row">
-                                <div class="ui-grid-col-2">
-                                    Login:
-                                </div>
-                                <div class="ui-grid-col-6">
-                                    <input pInputText type="text"  class="form-control" name="login">
-                                </div>
-                                <div class="ui-grid-col-4">
-                                    
-                                </div>
-                            </div>
-                            <div class="ui-grid-row">
-                                <div class="ui-grid-col-2">
-                                    Password:
-                                </div>
-                                <div class="ui-grid-col-6">
-                                    <input pInputText type="password"  class="form-control" name="password">
-                                </div>
-                                <div class="ui-grid-col-4">
-                                    
-                                </div>
-                            </div>
-                            <div class="ui-grid-row">
-                                <div class="ui-grid-col-2"></div>
-                                <div class="ui-grid-col-6">
-                                    <button pButton type="submit" label="Submit" ></button>
-                                </div>
-                                <div class="ui-grid-col-4"></div>
-                            </div>
-                        </div>
-                    </p-panel>
-                </form>
+    <div class="flex flex-row w-full  card-container yellow-container" style ="height:96vh">
+        <div class="flex flex-column w-8 align-items-start justify-content-around surface-card p-4 shadow-2 border-round "  >
+            <div class ="flex  align-items-start" >
+                <img src="assets/FocusR_1000px.png" alt="Image"  width="200" >
             </div>
+            <span></span>
+            <div class=" flex h-full align-items-center  " >
+                <section>
+                    <div class="text-6xl text-primary font-bold mb-3">Ticket Management Application</div>
+                    <p class="mt-0 mb-4 text-700 line-height-3">Mail your issue.System automatically raise a ticket follows complete life cyle and resolve Your issues.</p>
+                    
+                  
+                </section>
+            </div>
+        </div>
+        <div class="flex  w-full align-self-center justify-content-around ">
+            
+                <form class ="flex align-content-center" >
+                    <div class="surface-card p-4 shadow-2 border-round w-full align-self-center">
+                        <div class="text-center mb-5">
+                            <img src="assets/accept_tasks.svg" alt="Image" height="50" class="mb-3">
+                            <div class="text-900 text-3xl text-primary font-medium mb-3">Welcome to Ticketing Application</div>
+                            <span class="text-600 font-medium line-height-3">Don't have an account?</span>
+                            <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>
+                        </div>
+                    
+                        <div>
+                            <label for="email1" class="block text-900 font-medium mb-2">Email</label>
+                            <input id="email1" type="text" pInputText class="w-full mb-3">
+                    
+                            <label for="password1" class="block text-900 font-medium mb-2">Password</label>
+                            <input id="password1" type="password" pInputText class="w-full mb-3">
+                    
+                            <div class="flex align-items-center justify-content-between mb-6">
+                                <div class="flex align-items-center">
+                                    <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
+                                    <label for="rememberme1">Remember me</label>
+                                </div>
+                                <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
+                            </div>
+                    
+                            <button pButton pRipple label="Sign In" icon="pi pi-user" class="w-full"></button>
+                        </div>
+                    </div>
+                    
+                </form>
+            
             
         </div>
        
