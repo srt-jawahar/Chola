@@ -1,0 +1,22 @@
+<p-sidebar [modal]="false" class="menuPanel" [(visible)]="opened"
+ position="left" [showCloseIcon]="true"
+  >
+    <!-- <div id="panelHeader" (click)='menuPanelClose()'> Click here to close menu </div> -->
+    <p-panelMenu [transitionOptions]="'0ms'" [model]="items" ></p-panelMenu>
+    
+   
+  </p-sidebar>
+
+
+
+
+
+
+<p-sidebar  #sidebar styleClass="custom-class" ng-if="togglePanel == true"   [modal]="false" [(visible)]="display" position="left"  [showCloseIcon]="false"  [baseZIndex]="10000"  >
+  <img src="assets/FocusR_1000px.png" alt="Image" height="0" class="mb-1">
+  <i class ="pi pi-angle-right" style=" color: white;" (click)="panelClick()">
+  
+  </i>
+
+
+</p-sidebar> 

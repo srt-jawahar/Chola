@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './layouts/auth/components/landing-page/landing-page.component';
 import { LoginComponent } from './layouts/auth/components/login/login.component';
 import { AuthGuard } from './layouts/auth/guards/auth.guard';
+import { DefaultComponent } from './layouts/default/default.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 
 
 const routes: Routes = [
@@ -13,7 +16,13 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [AuthGuard]
+   
+  },
+  {
+    path: 'dashboard',
+    component: DefaultComponent,
+   
+   
   },
 
 
