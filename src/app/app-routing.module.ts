@@ -4,6 +4,7 @@ import { LandingPageComponent } from './layouts/auth/components/landing-page/lan
 import { LoginComponent } from './layouts/auth/components/login/login.component';
 import { AuthGuard } from './layouts/auth/guards/auth.guard';
 import { DefaultComponent } from './layouts/default/default.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 
@@ -16,11 +17,19 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    
    
   },
   {
     path: 'dashboard',
     component: DefaultComponent,
+    children: [
+      {
+        path: 'dashboard',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        component: DashboardComponent,
+      },]
    
    
   },

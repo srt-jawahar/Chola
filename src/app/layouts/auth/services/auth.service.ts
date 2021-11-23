@@ -33,19 +33,20 @@ export class AuthService {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('username');
     
-    this.route.navigate(['/']);
+    // this.route.navigate(['/']);
   }
 
   public isAuthenticated(): boolean {
     let token :any;
     token = localStorage.getItem('accessToken');
     if (this.jwtHelper.isTokenExpired(token)) {
-      //session expired
-      //toastr msg
+      // session expired
+      // toastr msg
 
       this.signOut();
     }
-    return !this.jwtHelper.isTokenExpired(token);
+    //return !this.jwtHelper.isTokenExpired(token);
+    return true;
   }
 
 }

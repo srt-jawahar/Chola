@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import {MenuModule} from 'primeng/menu';
 import { HeaderComponent } from './components/header/header.component';
 import {InputTextModule} from 'primeng/inputtext';
+import {DockModule} from 'primeng/dock';
+
 
 
 
@@ -25,7 +27,8 @@ import {InputTextModule} from 'primeng/inputtext';
     MenubarModule,
     PanelMenuModule,
     FormsModule,
-    MenuModule
+    MenuModule,
+    DockModule
     
     
     

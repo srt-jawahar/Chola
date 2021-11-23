@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelMenuModule } from 'primeng/panelmenu';
+import {CardModule} from 'primeng/card';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DefaultComponent } from './layouts/default/default.component';
 
@@ -57,7 +58,7 @@ export function clearState(
     CheckboxModule,
     PanelMenuModule,
     PanelModule,
-   
+    CardModule,
     MenubarModule,
     AuthModule,
     FormsModule,

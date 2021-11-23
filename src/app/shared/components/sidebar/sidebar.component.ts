@@ -14,15 +14,32 @@ export class SidebarComponent {
   togglePanel:boolean = true;
   display = true;
   items: MenuItem[] = []; 
+  iconItems: MenuItem[] =[];
+    
+  activeItem: MenuItem | undefined;
+
+ 
+
 
   constructor() {
- 
+
   }
 
   ngOnInit() {
+
+    this.iconItems = [
+      { icon: 'pi pi-fw pi-compass', routerLink: ['/dashboard/dashboard'],routerLinkActiveOptions: { exact: true }},
+      { icon: 'pi pi-fw pi-calendar'},
+      { icon: 'pi pi-fw pi-pencil'},
+      { icon: 'pi pi-fw pi-cog'}
+  ];
+  
+  this.activeItem = this.iconItems[0];
+
     this.items = [
         {label: 'Chart', icon: 'custom-icon', routerLink: 'charts'}]
     }
+    
 
   openTab() {
     this.opened = true;

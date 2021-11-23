@@ -13,10 +13,11 @@
 
 
 <p-sidebar  #sidebar styleClass="custom-class" ng-if="togglePanel == true"   [modal]="false" [(visible)]="display" position="left"  [showCloseIcon]="false"  [baseZIndex]="10000"  >
-  <img src="assets/FocusR_1000px.png" alt="Image" height="0" class="mb-1">
-  <i class ="pi pi-angle-right" style=" color: white;" (click)="panelClick()">
   
+  <i class ="pi pi-angle-right" style=" color: white;" (click)="panelClick()">
   </i>
+  <p-panelMenu styleClass ="dark-panel custom-panel" [model]="iconItems">
+    
 
-
+  </p-panelMenu>
 </p-sidebar> 
