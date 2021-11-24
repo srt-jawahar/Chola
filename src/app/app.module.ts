@@ -26,6 +26,8 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import {CardModule} from 'primeng/card';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DefaultComponent } from './layouts/default/default.component';
+import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
+import {DialogModule} from 'primeng/dialog';
 
 
 export function clearState(
@@ -47,6 +49,7 @@ export function clearState(
     LoginComponent,
     DashboardComponent,
     DefaultComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +67,7 @@ export function clearState(
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DialogModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}, { metaReducers: [clearState] }),
     StoreDevtoolsModule.instrument({

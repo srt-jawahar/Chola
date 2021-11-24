@@ -1,5 +1,14 @@
-<div>
-    <app-header></app-header>
+<div class="flex">
+  <div class="flex flex-column ">
     <app-sidebar></app-sidebar>
-    <router-outlet></router-outlet>
+  </div>
+  <div class="flex flex-column w-full">
+    <div class="flex">
+      <app-header></app-header>
+    </div>
+    <div class="surface-card p-4 h-full shadow-2 border-round">
+        <router-outlet></router-outlet>
+    </div>
+   
+  </div>
 </div>

@@ -1,7 +1,8 @@
 :host ::ng-deep {
 
-    .custom-menu{
-       border:none !important;
-       background-color: white;
+    .p-menubar{
+      // width: 100vw !important;
+       padding-left: 64rem;
+       padding-right: 1.4rem;
     }
 }

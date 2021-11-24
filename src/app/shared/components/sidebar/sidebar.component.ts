@@ -28,9 +28,9 @@ export class SidebarComponent {
   ngOnInit() {
 
     this.iconItems = [
-      { icon: 'pi pi-fw pi-compass', routerLink: ['/dashboard/dashboard'],routerLinkActiveOptions: { exact: true }},
-      { icon: 'pi pi-fw pi-calendar'},
-      { icon: 'pi pi-fw pi-pencil'},
+      { icon: 'pi pi-fw pi-compass', routerLink: ['/dashboard/dashboard'],routerLinkActiveOptions: { exact: true }, tooltip :"Dashboard"},
+      { icon: 'pi pi-fw pi-ticket',routerLink: ['/dashboard/edit-profile'],routerLinkActiveOptions: { exact: true }},
+      { icon: 'pi pi-fw pi-user'},
       { icon: 'pi pi-fw pi-cog'}
   ];
   
