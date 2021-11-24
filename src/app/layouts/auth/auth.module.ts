@@ -1,12 +1,14 @@
-;
 import { SharedModule } from './../../shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { authReducer } from './state/auth.reducer';
 import { StoreModule } from '@ngrx/store';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/layouts/auth/services/auth.service';
+ import {ToastModule} from 'primeng/toast';
+
+
 
 import { AuthGuard } from 'src/app/layouts/auth/guards/auth.guard';
 import { AuthEffects } from './state/auth.effects';
@@ -20,6 +22,7 @@ import { AuthEffects } from './state/auth.effects';
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
+     ToastModule,
     StoreModule.forFeature('auth', authReducer),
     EffectsModule.forFeature([AuthEffects]),
     //ToastrModule.forRoot(),
@@ -27,6 +30,7 @@ import { AuthEffects } from './state/auth.effects';
   providers: [
     AuthService,
     AuthGuard,
+    
   ],
 })
 export class AuthModule {}

@@ -1,0 +1,104 @@
+#panelHeader{
+    width: 100%;
+    height:10vh; 
+    background: lightpink;
+}
+#panelBody {
+     background:lightcyan;
+      height:90vh;
+    }
+#menuToggler{
+    writing-mode: vertical-lr;
+    background: lightgreen;
+    width: 40px;
+    padding: 10px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+}
+
+:host ::ng-deep {
+
+    .custom-class{
+        width: 75px;
+       background-color:  #12344D;;
+    }
+}
+
+:host ::ng-deep .dark-panel.p-panelmenu{
+    
+        margin-top:5rem;
+        
+    
+        .p-panelmenu-panel .p-panelmenu-header  > a {
+        border: none !important;
+        background: none!important;
+        
+      }
+
+      .p-panelmenu .p-panelmenu-header.p-highlight > a {
+
+        color: #12344D !important;
+        background-color: rgba(255,255,255,0.9) !important;
+        border-radius: 8px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+       .p-panelmenu-header > a:focus {
+        outline: 0 none;
+        outline-offset: 0;
+        color: #12344D !important;
+        border-radius:1px !important
+       // background-color: rgba(255,255,255,0.9) !important;
+      }
+
+      .p-panelmenu-header.p-highlight:not(.p-disabled) > a:hover {
+       background-color: #345C7C !important;
+        color: #fff !important; 
+      }
+
+      .p-panelmenu-header:not(.p-highlight):not(.p-disabled) > a:hover {
+        background-color: #345C7C !important;
+        color: #fff !important;;
+        border-color: #dee2e6;
+        
+      }
+    }
+    :host ::ng-deep .custom-panel .pi{
+        color: #BBDCFE;
+        background-color: transparent;
+    }
+
+
+:host ::ng-deep {
+    .menuToggler{
+        writing-mode: vertical-lr;
+        background: lightgreen;
+        width: 40px;
+        padding: 10px;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        font-family: "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 14px;
+    }
+}
+
+
+
+
+:host ::ng-deep {
+    .custom-icon {
+        width: 1rem;
+        height: 1rem;
+        //background:url(require('/assets/clip-meter.png'));
+        background-image: url("/assets/clip-meter.png");
+    }
+}
+
+
