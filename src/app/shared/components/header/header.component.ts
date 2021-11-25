@@ -13,6 +13,29 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
+    this.items = [
+      { icon: 'pi pi-fw pi-bell'},
+      { icon: 'pi pi-fw pi-user',
+      items:[
+        {
+            label:'Profile Settings',
+            routerLink: ['/dashboard/edit-profile'],routerLinkActiveOptions: { exact: true }
+            
+        },
+        {
+          separator:true
+      },
+        {
+            label:'Sign Out',
+            icon:'pi pi-fw pi-sign-out'
+        },
 
-}
+        ]
+      },
+      // {label: 'Edit', icon: 'pi pi-fw pi-pencil'},
+      // {label: 'Documentation', icon: 'pi pi-fw pi-file'},
+      // {label: 'Settings', icon: 'pi pi-fw pi-cog'}
+  ];
+   
+    }
+  }

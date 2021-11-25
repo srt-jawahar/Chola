@@ -38,11 +38,11 @@ export class DefaultComponent implements OnInit {
     //   () => (this.isLoading$ = this.store.select(selectIsOrdersHeadersLoading))
     // );
 
-    this.sidebaropen = !this.mobileQuery.matches;
+    //this.sidebaropen = !this.mobileQuery.matches;
   }
 
   sideBarToggler() {
-    this.sidebaropen = !this.sidebaropen;
+    //this.sidebaropen = !this.sidebaropen;
   }
 }
 

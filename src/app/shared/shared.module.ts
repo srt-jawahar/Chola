@@ -5,11 +5,12 @@ import {ButtonModule} from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import { FormsModule } from '@angular/forms';
+import {TabMenuModule} from 'primeng/tabmenu';
 import {MenuModule} from 'primeng/menu';
 import { HeaderComponent } from './components/header/header.component';
 import {InputTextModule} from 'primeng/inputtext';
 import {DockModule} from 'primeng/dock';
-
+import {TooltipModule} from 'primeng/tooltip';
 
 
 
@@ -28,7 +29,9 @@ import {DockModule} from 'primeng/dock';
     PanelMenuModule,
     FormsModule,
     MenuModule,
-    DockModule
+    DockModule,
+    TabMenuModule,
+    TooltipModule
     
     
     

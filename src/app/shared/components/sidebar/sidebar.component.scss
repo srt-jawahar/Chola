@@ -20,11 +20,23 @@
     font-size: 14px;
 }
 
+
 :host ::ng-deep {
 
     .custom-class{
-        width: 75px;
-       background-color:  #12344D;;
+        position: inherit;
+        transition: transform .3s;
+        display: flex;
+        flex-direction: column;
+        background-color: #12344D;
+        height: 100vh;
+        width: 4rem;
+       
+    }
+    .p-sidebar .p-sidebar-content {
+    
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }
 

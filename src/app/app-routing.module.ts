@@ -5,6 +5,7 @@ import { LoginComponent } from './layouts/auth/components/login/login.component'
 import { AuthGuard } from './layouts/auth/guards/auth.guard';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 
@@ -29,7 +30,14 @@ const routes: Routes = [
         pathMatch: 'full',
         canActivate: [AuthGuard],
         component: DashboardComponent,
-      },]
+      },
+      {
+        path: 'edit-profile',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        component: EditProfileComponent,
+      },
+    ]
    
    
   },
