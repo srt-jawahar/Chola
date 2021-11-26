@@ -16,12 +16,15 @@ import { AuthState } from '../../state/auth.reducer';
 export class LoginComponent implements OnInit {
 
   @Input() isLoading: boolean | undefined;
+  @Input() currentUser: any;
+
   @ViewChild('username') inputEl: ElementRef | undefined;
 
   loginFormGroup   = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
     })
+  form: any;
  
 
   constructor(private messageService: MessageService,
@@ -42,7 +45,9 @@ export class LoginComponent implements OnInit {
        ...this.loginFormGroup.value,
        
      };
+     //localStorage.setItem('username',this.loginFormGroup.controls['username'].value);
      this.store.dispatch(AuthPageAction.startLogin(payload)); 
+     this.currentUser = this.loginFormGroup.controls['username'].value;
     // alert(JSON.stringify(this.loginFormGroup.value));
     this.messageService.add({severity:'success', summary:'Login Message', detail:'Login sucess'});
     this.router.navigate(['/dashboard'])

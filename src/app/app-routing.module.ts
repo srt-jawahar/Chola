@@ -4,22 +4,22 @@ import { LandingPageComponent } from './layouts/auth/components/landing-page/lan
 import { LoginComponent } from './layouts/auth/components/login/login.component';
 import { AuthGuard } from './layouts/auth/guards/auth.guard';
 import { DefaultComponent } from './layouts/default/default.component';
+import { AdminComponent } from './modules/admin/components/admin/admin.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
+import { ChangePasswordComponent } from './modules/profile/components/change-password/change-password.component';
+import { EditProfileComponent } from './modules/profile/components/edit-profile/edit-profile.component';
+
 import { HeaderComponent } from './shared/components/header/header.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-
 
 const routes: Routes = [
   {
     path: '',
-    component: LandingPageComponent
+    component: LandingPageComponent,
   },
   {
     path: 'login',
     component: LoginComponent,
-    
-   
   },
   {
     path: 'dashboard',
@@ -37,17 +37,19 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         component: EditProfileComponent,
       },
-    ]
-   
-   
+
+      {
+        path: 'admin',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        component: AdminComponent,
+      },
+    ],
   },
-
-
-    
-  ]
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

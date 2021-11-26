@@ -49,4 +49,14 @@ export class AuthService {
     return true;
   }
 
+  public login(loginpayload:any) {
+    let payload: LoginPayload = {
+      ...loginpayload,
+    };
+    console.log(loginpayload);
+    localStorage.setItem('username',loginpayload.username);
+    this.store.dispatch(AuthPageAction.setUser(loginpayload));
+    return loginpayload
+  }
+
 }
