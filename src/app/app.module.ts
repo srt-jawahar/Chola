@@ -23,12 +23,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelMenuModule } from 'primeng/panelmenu';
-import {CardModule} from 'primeng/card';
+import { CardModule } from 'primeng/card';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DefaultComponent } from './layouts/default/default.component';
-import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
-import {DialogModule} from 'primeng/dialog';
+import { EditProfileComponent } from './modules/profile/components/edit-profile/edit-profile.component';
+import { DialogModule } from 'primeng/dialog';
+// profile
+import { TabMenuModule } from 'primeng/tabmenu';
+import { TabViewModule } from 'primeng/tabview';
+import { PasswordModule } from 'primeng/password';
+import { RouterModule } from '@angular/router';
+import { DividerModule } from 'primeng/divider';
+import { SlaPolicyComponent } from './modules/admin/components/sla-policy/sla-policy.component';
+import { AdminComponent } from './modules/admin/components/admin/admin.component';
+import { ChangePasswordComponent } from './modules/profile/components/change-password/change-password.component';
 
+// admin
+import { TableModule } from 'primeng/table';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DropdownModule } from 'primeng/dropdown';
 
 export function clearState(
   reducer: (arg0: any, arg1: { type: string }) => any
@@ -50,17 +63,27 @@ export function clearState(
     DashboardComponent,
     DefaultComponent,
     EditProfileComponent,
+    SlaPolicyComponent,
+    AdminComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
+    DropdownModule,
+    RouterModule,
     AppRoutingModule,
     InputTextModule,
+    DividerModule,
     ButtonModule,
     ToastModule,
     RippleModule,
     CheckboxModule,
     PanelMenuModule,
+    TableModule,
     PanelModule,
+    PasswordModule,
+    InputNumberModule,
+    TabViewModule,
     CardModule,
     MenubarModule,
     AuthModule,
@@ -68,6 +91,7 @@ export function clearState(
     ReactiveFormsModule,
     HttpClientModule,
     DialogModule,
+    TabMenuModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}, { metaReducers: [clearState] }),
     StoreDevtoolsModule.instrument({
@@ -81,7 +105,6 @@ export function clearState(
   ],
   providers: [
     JwtHelperService,
-   
 
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     {

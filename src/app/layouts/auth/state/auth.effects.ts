@@ -15,5 +15,20 @@ export class AuthEffects {
     private route: Router,
   ) {}
  
+  startLogin$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AuthPageAction.startLogin),
+      map((_action) => {
+        return this.authService.login(_action).pipe(
+          
+          catchError((err) => {
+            //this.toastr.error(err.error.message, 'Error Occured!');
+            return of(AuthPageAction.loginFail({ error: err.error.message }));
+          })
+        );
+      })
+    );
+  });
+
 
 }

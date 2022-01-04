@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
-
-
-
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -11,51 +8,54 @@ import { MenuItem } from 'primeng/api';
 })
 export class SidebarComponent {
   opened = false;
-  togglePanel:boolean = true;
+  togglePanel: boolean = true;
   display = true;
-  items: MenuItem[] = []; 
-  iconItems: MenuItem[] =[];
-    
+  items: MenuItem[] = [];
+  iconItems: MenuItem[] = [];
+
   activeItem: MenuItem | undefined;
 
- 
-
-
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnInit() {
-
     this.iconItems = [
-      { icon: 'pi pi-fw pi-compass', routerLink: ['/dashboard/dashboard'],routerLinkActiveOptions: { exact: true }, tooltip :"Dashboard"},
-      { icon: 'pi pi-fw pi-ticket',routerLink: ['/dashboard/edit-profile'],routerLinkActiveOptions: { exact: true }},
-      { icon: 'pi pi-fw pi-user'},
-      { icon: 'pi pi-fw pi-cog'}
-  ];
-  
-  this.activeItem = this.iconItems[0];
+      {
+        icon: 'pi pi-fw pi-compass',
+        routerLink: ['/dashboard/dashboard'],
+        routerLinkActiveOptions: { exact: true },
+        tooltip: 'Dashboard',
+      },
+      {
+        icon: 'pi pi-fw pi-user',
+        routerLink: ['/dashboard/edit-profile'],
+        routerLinkActiveOptions: { exact: true },
+      },
+      { icon: 'pi pi-fw pi-ticket' },
+      {
+        icon: 'pi pi-fw pi-cog',
+        routerLink: ['/dashboard/admin'],
+        routerLinkActiveOptions: { exact: true },
+      },
+    ];
+
+    this.activeItem = this.iconItems[0];
 
     this.items = [
-        {label: 'Chart', icon: 'custom-icon', routerLink: 'charts'}]
-    }
-    
+      { label: 'Chart', icon: 'custom-icon', routerLink: 'charts' },
+    ];
+  }
 
   openTab() {
     this.opened = true;
   }
 
-  panelClick(){
+  panelClick() {
     this.opened = true;
     this.togglePanel = false;
   }
 
-  menuPanelClose(){
+  menuPanelClose() {
     this.opened = false;
     this.togglePanel = true;
   }
-
-  
-
-  
 }
