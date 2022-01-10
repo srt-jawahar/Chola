@@ -1,100 +1,91 @@
-<div class="card">
+<div class="grid w-full h-screen pt-4 pl-4">
   <div
-    class="flex flex-row w-full card-container yellow-container"
-    style="height: 96vh"
+    class="col-4 flex flex-column justify-content-around surface-card shadow-2 radius"
   >
-    <div
-      class="
-        flex flex-column
-        w-8
-        align-items-start
-        justify-content-around
-        surface-card
-        p-4
-        shadow-2
-        border-round
-      "
-    >
-      <div class="flex align-items-start">
-        <img src="assets/FocusR_1000px.png" alt="Image" width="200" />
-      </div>
-      <span></span>
-      <div class="flex h-full align-items-center">
-        <section>
-          <div class="text-6xl text-primary font-bold mb-3">
-            Ticket Management Application
-          </div>
-          <p class="mt-0 mb-4 text-700 line-height-3">
-            Mail your issue.System automatically raise a ticket follows complete
-            life cyle and resolve Your issues.
-          </p>
-        </section>
-      </div>
+    <div class="flex align-items-center pl-8">
+      <img src="assets/FocusR_1000px.png" alt="Image" width="200" />
     </div>
-    <div class="flex w-full align-self-center justify-content-around">
-      <form
-        [formGroup]="loginFormGroup"
-        (ngSubmit)="login()"
-        class="flex align-content-center"
-      >
-        <div class="w-full align-self-center">
-          <div class="text-center mb-5">
-            <img
-              src="assets/FocusR_1000px.png"
-              alt="Image"
-              height="50"
-              class="mb-3"
-            />
-            <div class="text-2xl font-bold mb-3">
-              Sign in to Ticket Management Dashboard
-            </div>
-          </div>
+    <span></span>
+    <div class="flex h-full align-items-center">
+      <section>
+        <div class="text-6xl text-primary font-bold mb-3">
+          Ticket Management Application
+        </div>
+        <p class="mt-0 mb-4 text-700 line-height-3">
+          Mail your issue.System automatically raise a ticket follows complete
+          life cyle and resolve Your issues.
+        </p>
+      </section>
+    </div>
+  </div>
 
-          <div>
-            <label for="username">Username</label>
+  <div class="col-7">
+    <form
+      style="margin-top: 5rem"
+      [formGroup]="loginFormGroup"
+      (ngSubmit)="login()"
+    >
+      <div class="text-center mb-5">
+        <img
+          src="assets/FocusR_1000px.png"
+          alt="Image"
+          height="50"
+          class="mb-3"
+        />
+        <div class="text-2xl font-bold mb-3">
+          <b>Sign in </b>
+        </div>
+      </div>
+      <div class="p-fluid p-grid">
+        <div class="p-field col-offset-2 col-9 mb-3">
+          <span class="p-float-label">
             <input
-              id="username"
               type="text"
-              pInputText
-              class="w-full mb-3"
+              id="inputtext"
               formControlName="username"
-            />
-
-            <label for="password">Password</label>
-            <input
-              id="password"
-              type="password"
               pInputText
-              class="w-full mb-3"
-              formControlName="password"
             />
-
-            <div class="flex align-items-center justify-content-between mb-6">
-              <div class="flex align-items-center">
-                <p-checkbox
-                  id="rememberme1"
-                  [binary]="true"
-                  styleClass="mr-2"
-                ></p-checkbox>
-                <label for="rememberme1">Remember me</label>
-              </div>
-              <a
-                class="
-                  font-medium
-                  no-underline
-                  ml-2
-                  text-blue-500 text-right
-                  cursor-pointer
-                "
-                >Forgot password?</a
-              >
-            </div>
-
-            <button pButton pRipple label="Log In" type="submit"></button>
-            <p-toast position="top-right"></p-toast>
+            <label for="inputtext">Username</label>
+          </span>
+        </div>
+        <div class="p-field col-offset-2 col-9">
+          <span class="p-float-label">
+            <p-password
+              inputId="password"
+              formControlName="password"
+              [feedback]="false"
+            ></p-password>
+            <label for="password">Password</label>
+          </span>
+        </div>
+        <div class="p-fluid grid mt-2">
+          <div class="p-field col-offset-2 col-4">
+            <p-checkbox
+              id="rememberme1"
+              [binary]="true"
+              styleClass="mr-2"
+            ></p-checkbox>
+            <label for="rememberme1">Remember me</label>
+          </div>
+          <div class="p-field col-offset-3 col-3">
+            <a
+              class="font-medium no-underline text-blue-500 text-right cursor-pointer"
+              >Forgot password?</a
+            >
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+      <div class="p-field col-offset-2 col-9">
+        <button
+          pButton
+          pRipple
+          label="Sign In"
+          type="submit"
+          class="w-full"
+        ></button>
+      </div>
+
+      <p-toast position="top-right"></p-toast>
+    </form>
   </div>
 </div>

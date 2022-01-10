@@ -39,9 +39,65 @@ import { AdminComponent } from './modules/admin/components/admin/admin.component
 import { ChangePasswordComponent } from './modules/profile/components/change-password/change-password.component';
 
 // admin
+import { NgDynamicBreadcrumbModule } from 'ng-dynamic-breadcrumb';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToolbarModule } from 'primeng/toolbar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+//import { CheckboxModule } from 'primeng/checkbox';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+//import { Quill } from 'quill';
+import { SidebarModule } from 'primeng/sidebar';
 import { TableModule } from 'primeng/table';
+
+import { MultiSelectModule } from 'primeng/multiselect';
+
 import { InputNumberModule } from 'primeng/inputnumber';
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { DropdownModule } from 'primeng/dropdown';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { ImageModule } from 'primeng/image';
+import { EditorModule } from 'primeng/editor';
+import { AgentdashboardComponent } from './modules/admin/components/agents/components/agentdashboard/agentdashboard.component';
+import { NewagentComponent } from './modules/admin/components/agents/components/newagent/newagent.component';
+import { GeneralComponent } from './modules/admin/components/agents/components/general/general.component';
+import { ImportComponent } from './modules/admin/components/agents/components/import/import.component';
+import { NewrequesterComponent } from './modules/admin/components/requesters/components/newrequesters/newrequester.component';
+import { RequesterdashboardComponent } from './modules/admin/components/requesters/components/requestersdashboard/requesterdashboard.component';
+import { RequestergeneralComponent } from './modules/admin/components/requesters/components/general/requestergeneral.component';
+import { RolesComponent } from './modules/admin/components/roles/components/roles/roles.component';
+import { RolesdashboardComponent } from './modules/admin/components/roles/components/rolesdashboard/rolesdashboard.component';
+import { NewroleComponent } from './modules/admin/components/roles/components/newrole/newrole.component';
+import { GroupComponent } from './modules/admin/components/groups/components/group/group.component';
+import { GroupdashboardComponent } from './modules/admin/components/groups/components/groupdashboard/groupdashboard.component';
+import { NewagentgroupComponent } from './modules/admin/components/groups/components/newagentgroup/newagentgroup.component';
+import { NewrequestergroupComponent } from './modules/admin/components/groups/components/newrequestergroup/newrequestergroup.component';
+import { EmailComponent } from './modules/admin/components/support_channels/components/email/email.component';
+import { ChatComponent } from './modules/admin/components/support_channels/components/chat/chat.component';
+import { NewEmailSettingsComponent } from './modules/admin/components/support_channels/components/new-email-settings/new-email-settings.component';
+import { EmailNotificationComponent } from './modules/admin/components/support_channels/components/email-notification/email-notification.component';
+import { TicketComponent } from './modules/tickets/components/ticket/ticket.component';
+import { MenuModule } from 'primeng/menu';
+import { CalendarModule } from 'primeng/calendar';
+import { AccordionModule } from 'primeng/accordion';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { ListboxModule } from 'primeng/listbox';
+import { ChartModule } from 'primeng/chart';
+import { TicketDetailComponent } from './modules/tickets/components/ticket-detail/ticket-detail.component';
+import { RequesterdetailComponent } from './modules/admin/components/requesters/components/requesterdetail/requesterdetail.component';
+import { UserComponent } from './modules/usermanagement/components/user/user.component';
+import { AddUserComponent } from './modules/usermanagement/components/add-user/add-user.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { BadgeModule } from 'primeng/badge';
+
+import { ScrollTopModule } from 'primeng/scrolltop';
+import { ProgressBarModule } from 'primeng/progressbar';
+
+import { ChartdonutComponent } from './modules/dashboard/components/chartdonut/chartdonut.component';
 
 export function clearState(
   reducer: (arg0: any, arg1: { type: string }) => any
@@ -66,32 +122,83 @@ export function clearState(
     SlaPolicyComponent,
     AdminComponent,
     ChangePasswordComponent,
+    AgentdashboardComponent,
+    NewagentComponent,
+    GeneralComponent,
+    ImportComponent,
+    NewrequesterComponent,
+    RequesterdashboardComponent,
+    RequestergeneralComponent,
+    RolesComponent,
+    RolesdashboardComponent,
+    NewroleComponent,
+    GroupComponent,
+    GroupdashboardComponent,
+    NewagentgroupComponent,
+    NewrequestergroupComponent,
+    EmailComponent,
+    ChatComponent,
+    NewEmailSettingsComponent,
+    EmailNotificationComponent,
+    TicketComponent,
+    TicketDetailComponent,
+    RequesterdetailComponent,
+    UserComponent,
+    AddUserComponent,
+    ChartdonutComponent,
   ],
   imports: [
     BrowserModule,
+    EditorModule,
     DropdownModule,
     RouterModule,
+    NgApexchartsModule,
+    ToolbarModule,
+    ConfirmPopupModule,
     AppRoutingModule,
+    FileUploadModule,
     InputTextModule,
+    NgDynamicBreadcrumbModule,
+    SidebarModule,
+    AutoCompleteModule,
+    CascadeSelectModule,
+    ImageModule,
+    ToggleButtonModule,
+    InputSwitchModule,
     DividerModule,
     ButtonModule,
     ToastModule,
     RippleModule,
+    BadgeModule,
     CheckboxModule,
     PanelMenuModule,
     TableModule,
+    InputTextareaModule,
     PanelModule,
     PasswordModule,
     InputNumberModule,
+    AccordionModule,
     TabViewModule,
     CardModule,
     MenubarModule,
+    ConfirmDialogModule,
     AuthModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     DialogModule,
     TabMenuModule,
+    RadioButtonModule,
+    MultiSelectModule,
+    MenuModule,
+    CalendarModule,
+    OverlayPanelModule,
+    TieredMenuModule,
+    ListboxModule,
+    ChartModule,
+    ScrollTopModule,
+    ProgressBarModule,
+
     BrowserAnimationsModule,
     StoreModule.forRoot({}, { metaReducers: [clearState] }),
     StoreDevtoolsModule.instrument({
