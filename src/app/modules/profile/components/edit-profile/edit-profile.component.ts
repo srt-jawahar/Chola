@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MenuItem } from 'primeng/api';
 import { Observable } from 'rxjs';
+import { NgDynamicBreadcrumbService } from 'ng-dynamic-breadcrumb';
 
 import {
   AuthState,
@@ -15,13 +16,16 @@ import {
 })
 export class EditProfileComponent implements OnInit {
   display: boolean = false;
-
+  breadcrumb: any;
   items: MenuItem[] = [];
   activeItem!: MenuItem;
   currentUser: Observable<object | null> | undefined;
   username: any;
 
-  constructor(private store: Store<AuthState>) {}
+  constructor(
+    private store: Store<AuthState>,
+    private ngDynamicBreadcrumbService: NgDynamicBreadcrumbService
+  ) {}
 
   ngOnInit(): void {
     this.currentUser = this.store.select(selectUsername);
@@ -45,4 +49,23 @@ export class EditProfileComponent implements OnInit {
     this.display = true;
   }
   closeItem(e: any, a: any) {}
+
+  handleChange(e: any) {
+    if (e.index == 0) {
+      this.breadcrumb = [
+        {
+          label: 'Profile/General',
+          url: '',
+        },
+      ];
+    } else if (e.index == 1) {
+      this.breadcrumb = [
+        {
+          label: 'Profile/Change Password',
+          url: '',
+        },
+      ];
+    }
+    this.ngDynamicBreadcrumbService.updateBreadcrumb(this.breadcrumb);
+  }
 }
