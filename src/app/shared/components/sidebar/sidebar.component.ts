@@ -83,16 +83,22 @@ export class SidebarComponent {
         },
         {
           icon: 'pi pi-fw pi-ticket',
-          routerLink: ['/dashboard/tickets'],
+          routerLink: ['/dashboard/records'],
           routerLinkActiveOptions: { exact: true },
-          tooltipOptions: { tooltipLabel: 'ticket' },
+          tooltipOptions: { tooltipLabel: 'records' },
         },
+        // {
+        //   icon: 'pi pi-fw pi-cog',
+        //   routerLink: ['/dashboard/admin'],
+        //   routerLinkActiveOptions: { exact: true },
+        //   tooltipOptions: { tooltipLabel: 'Admin' },
+        // },
         {
-          icon: 'pi pi-fw pi-cog',
-          routerLink: ['/dashboard/admin'],
-          routerLinkActiveOptions: { exact: true },
-          tooltipOptions: { tooltipLabel: 'Admin' },
-        },
+          icon:'pi pi-fw pi-file-o',
+          routerLink: ['/dashboard/files'],
+          routerLinkActiveOptions: {exact: true},
+          tooltipOptions: { tooltipLabel : 'files'},
+        }
       ];
 
       this.activeItem = this.iconItems[0];
@@ -116,15 +122,15 @@ export class SidebarComponent {
         {
           icon: 'pi pi-fw pi-ticket',
           id: '3',
-          label: 'Ticket',
-          routerLink: ['/dashboard/tickets'],
+          label: 'Records',
+          routerLink: ['/dashboard/records'],
           routerLinkActiveOptions: { exact: true },
         },
         {
-          icon: 'pi pi-fw pi-cog',
-          label: 'Admin',
+          icon: 'pi pi-fw pi-file-o',
+          label: 'Files',
           id: '4',
-          routerLink: ['/dashboard/admin'],
+          routerLink: ['/dashboard/files'],
           routerLinkActiveOptions: { exact: true },
         },
       ];

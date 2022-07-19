@@ -1,36 +1,22 @@
 <div class="p-fluid col-12">
+  <!-- <app-download></app-download> -->
   <p-table
     #dt
-    [value]="tickets"
+    [value]="data"
     [rows]="10"
     [paginator]="true"
     responsiveLayout="scroll"
     [columns]="selectedColumns"
     [(selection)]="selectedTickets"
     [rowHover]="true"
-    dataKey="id"
+    dataKey="band1_salary_id"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     [showCurrentPageReport]="true"
     [globalFilterFields]="[
-      'subject',
-      'requester',
-      'state',
-      'status',
-      'priority',
-      'assigned_to',
-      'status_details',
-      'department ',
-      'source',
-      'created_date',
-      'last_modified_date',
-      'due_date',
-      'closed_date',
-      'approval_status',
-      'impact',
-      'urgency ',
-      'child_ticket',
-      'consultant_remarks',
-      'category'
+     'geography',
+     'band1_salary_id',
+     'cc',
+     'data'
     ]"
   >
     <ng-template pTemplate="caption">
@@ -110,7 +96,7 @@
     </ng-template>
     <ng-template pTemplate="summary">
       <div class="p-d-flex p-ai-center p-jc-between">
-        In total there are {{ tickets ? tickets.length : 0 }} tickets.
+        In total there are {{ data ? data.length : 0 }} records.
       </div>
     </ng-template>
   </p-table>

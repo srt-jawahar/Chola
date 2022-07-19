@@ -32,40 +32,49 @@ export class DashboardComponent implements OnInit {
   tickets: any;
   viewPriorityChart: any;
   prioritytickets: any;
+  healthChart:any;
+  viewHealthChart: any;
 
   constructor() {}
 
   ngOnInit(): void {
     this.prioritytickets = [
-      { priority: 'Low', tickets: '56' },
-      { priority: 'Medium', tickets: '35' },
-      { priority: 'High', tickets: '15' },
-      { priority: 'Urgent', tickets: '8' },
+      { priority: 'Micro', tickets: '36' },
+      { priority: 'Small', tickets: '40' },
+      { priority: 'Medium', tickets: '25' },
     ];
     this.tickets = [
-      { status: 'Duplicate', tickets: '56' },
-      { status: 'Customer Working', tickets: '35' },
-      { status: 'Cancelled', tickets: '15' },
-      { status: 'Open', tickets: '8' },
-      { status: 'On Hold', tickets: '6' },
-      { status: 'WIP', tickets: '20' },
-      { status: 'pending', tickets: '10' },
-      { status: 'Technical Working', tickets: '10' },
+      { status: 'Car Insurance', tickets: '56' },
+      { status: 'Two Wheeler Insurance', tickets: '35' },
+      { status: 'Own Damage Car Insurance', tickets: '15' },
+      { status: 'Third Party Car Insurance', tickets: '8' },
+      { status: 'Comprehensive Car Insurance', tickets: '6' },
+      { status: 'Commercial Vehicle Insurance', tickets: '20' },
+      { status: 'Comprehensive Two Wheeler Insurance', tickets: '10' },
+      { status: 'Commercial Vehicle Insurance', tickets: '10' },
     ];
+
+    this.healthChart = [
+      { type : 'Arogya Sanjeevani', count: '12'},
+      { type : 'Chola Healthline', count: '17'},
+      { type : 'Accident Protection', count: '10'},
+      { type : 'Corona Rakshak', count: '32'},
+    ]
+
     this.chartOptions = {
       series: [56, 35, 15, 8, 6, 20, 10, 10],
       chart: {
         type: 'donut',
       },
       labels: [
-        'Duplicate',
-        'Customer Working',
-        'Cancelled',
-        'Open',
-        'On Hold',
-        'WIP',
-        'Pending',
-        'Technical Working',
+        'Car',
+        'Two Wheeler',
+        'Third Party',
+        'Own Damage',
+        'Third Party',
+        'CCI',
+        'CTI',
+        'CVI',
       ],
       plotOptions: {
         pie: {
@@ -148,5 +157,9 @@ export class DashboardComponent implements OnInit {
   }
   ticketByPriority() {
     this.viewPriorityChart = true;
+  }
+
+  healthCharts() {
+    this.viewHealthChart = true;
   }
 }

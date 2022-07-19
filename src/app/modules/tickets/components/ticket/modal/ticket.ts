@@ -1,24 +1,26 @@
-export interface Ticket {
-  id?: string;
-  subject?: string;
-  Requester?: string;
-  state?: string;
-  status?: string;
-  priority?: string;
-  assigned_to?: string;
-  status_details?: string;
-  department?: string;
+export interface Insurance {
+  band1_salary_id?: string;
+  account?: string;
+  cc?: string;
+  chola_period?: string;
+  createdAt?: string;
+  createdBy?: string;
+  data?: string;
+  emp_id?: string;
+  geography?: string;
+  jobposition?: string;
+  lob?: string;
+  modified_by?: string;
+  modified_date?: string;
+  period?: string;
+  scale?: string;
+  scenario?: string;
   source?: string;
-  created_date?: string;
-  last_modified_date?: string;
-  due_date?: string;
-  closed_date?: string;
-  approval_status?: string;
-  impact?: string;
-  urgency?: string;
-  child_ticket?: string;
-  consultant_remarks?: string;
-  category?: categoryPayload[];
+  updatedAt?: string;
+  uploaded_by?: string;
+  uploaded_date?: string;
+  year?: string;
+  // category?: categoryPayload[];
 }
 
 export interface categoryPayload {

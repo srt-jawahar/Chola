@@ -32,15 +32,15 @@ export class ChartdonutComponent implements OnInit {
 
   ngOnInit(): void {
     this.chartOptions = {
-      series: [56, 10, 20, 5],
+      series: [36, 40, 25],
       chart: {
         type: 'donut',
       },
-      labels: ['Low', 'Medium', 'High', 'Urgent'],
+      labels: ['Micro', 'Small', 'Medium'],
       plotOptions: {
         pie: {
           expandOnClick: true,
-          offsetX: 4,
+          offsetX: 3,
           offsetY: 0,
           customScale: 1,
 

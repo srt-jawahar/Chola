@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './layouts/auth/components/landing-page/landing-page.component';
 import { LoginComponent } from './layouts/auth/components/login/login.component';
@@ -7,6 +7,7 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { AdminComponent } from './modules/admin/components/admin/admin.component';
 import { RequesterdetailComponent } from './modules/admin/components/requesters/components/requesterdetail/requesterdetail.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { UploadComponent } from './modules/files/upload/upload.component';
 import { ChangePasswordComponent } from './modules/profile/components/change-password/change-password.component';
 import { EditProfileComponent } from './modules/profile/components/edit-profile/edit-profile.component';
 import { TicketDetailComponent } from './modules/tickets/components/ticket-detail/ticket-detail.component';
@@ -52,6 +53,14 @@ const routes: Routes = [
         pathMatch: 'full',
         canActivate: [AuthGuard],
         component: DashboardComponent,
+        data: {
+          breadcrumb : [
+            {
+              label: 'Dashboard',
+              url : '',
+            }
+          ]
+        }
       },
       {
         path: 'edit-profile',
@@ -72,14 +81,14 @@ const routes: Routes = [
         },
       },
       {
-        path: 'tickets',
+        path: 'records',
         pathMatch: 'full',
         canActivate: [AuthGuard],
         component: TicketComponent,
         data: {
           breadcrumb: [
             {
-              label: 'Tickets',
+              label: 'Records',
               url: '',
             },
           ],
@@ -91,31 +100,49 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         component: TicketDetailComponent,
       },
-
       {
-        path: 'admin',
+        path:'files',
         pathMatch: 'full',
         canActivate: [AuthGuard],
-        component: AdminComponent,
+        component: UploadComponent,
         data: {
-          breadcrumb: [
+          breadcrumb : [
             {
-              label: 'Admin',
-              url: '',
+              label: 'Files',
+              url : '',
             },
             {
-              label: 'SLA Policies',
-              url: '',
-            },
-          ],
-        },
-      },
-      {
-        path: 'admin/requesters/:id',
-        pathMatch: 'full',
-        canActivate: [AuthGuard],
-        component: RequesterdetailComponent,
-      },
+              label: 'upload',
+              url : '',
+            }
+          ]
+        }
+      }
+
+      // {
+      //   path: 'admin',
+      //   pathMatch: 'full',
+      //   canActivate: [AuthGuard],
+      //   component: AdminComponent,
+      //   data: {
+      //     breadcrumb: [
+      //       {
+      //         label: 'Admin',
+      //         url: '',
+      //       },
+      //       {
+      //         label: 'SLA Policies',
+      //         url: '',
+      //       },
+      //     ],
+      //   },
+      // },
+      // {
+      //   path: 'admin/requesters/:id',
+      //   pathMatch: 'full',
+      //   canActivate: [AuthGuard],
+      //   component: RequesterdetailComponent,
+      // },
     ],
   },
 ];

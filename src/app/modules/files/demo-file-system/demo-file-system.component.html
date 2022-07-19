@@ -1,0 +1,14 @@
+
+<p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="dname" [showClear]="false" (onChange)="onChange($event)"></p-dropdown>
+<br>
+
+<div *ngIf="!citynames">
+    <input type="file" placeholder="Select File" style="margin-top: 5px;" [disabled]='citynames'>
+    <p-progressSpinner ></p-progressSpinner>
+    <button pButton pRipple type="button" label="Primary" class="p-button-rounded" (click)="uploadFile($event)"></button>
+</div>
+<!-- <input type="file" placeholder="Select File" style="margin-top: 5px;" [disabled]='citynames'> -->
+<!-- <p-progressSpinner ></p-progressSpinner> -->
+
+
+

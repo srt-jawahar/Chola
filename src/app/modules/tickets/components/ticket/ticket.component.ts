@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { OverlayPanel } from 'primeng/overlaypanel';
+import { Insurance } from './modal/ticket';
 import { TicketService } from './ticketservice';
 
 @Component({
@@ -35,19 +36,27 @@ export class TicketComponent implements OnInit, AfterViewInit {
   menuItemDisplay: boolean = false;
   actualtarget: any;
   agentitems: any;
+  ticket:Insurance[] = [];
+  data: any = [];
 
   constructor(
     private router: Router,
     private ticketService: TicketService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService
-  ) {}
+  ) {
+    this.ticketService.getTickets().subscribe(data => {
+      this.data = data
+      console.log(data)
+    })
+  }
 
   ngAfterViewInit(): void {
-    this.ticketService.getTickets().then((data) => (this.tickets = data));
+    
   }
 
   ngOnInit(): void {
+    this.ticketService.getRecords().then((data) => (this.ticket = data));
     this.agentitems = [
       { label: 'ATA Support(Me)' },
       { label: 'ATA SD' },
@@ -126,31 +135,33 @@ export class TicketComponent implements OnInit, AfterViewInit {
     ];
 
     this.cols = [
-      { field: 'requester', header: 'requester' },
-      { field: 'subject', header: 'subject' },
-      { field: 'created_date', header: 'created_date' },
-      { field: 'status', header: 'status' },
-      { field: 'state', header: 'state' },
-      { field: 'priority', header: 'priority' },
-      { field: 'assigned_to', header: 'assigned_to' },
-      { field: 'status_details', header: 'status_details' },
-      { field: 'department', header: 'department' },
+      { field: 'band1_salary_id', header: 'band1_salary_id' },
+      { field: 'account', header: 'account' },
+      { field: 'cc', header: 'cc' },
+      { field: 'chola_period', header: 'chola_period' },
+      { field: 'createdAt', header: 'createdAt' },
+      // { field: 'createdBy', header: 'createdBy' },
+      { field: 'data', header: 'data' },
+      { field: 'emp_id', header: 'emp_id' },
+      { field: 'geography', header: 'geography' },
+      { field: 'jobposition', header: 'jobposition' },
+      { field: 'lob', header: 'lob' },
+      // { field: 'modified_by', header: 'modified_by' },
+      // { field: 'modified_date', header: 'modified_date' },
+      { field: 'period', header: 'period' },
+      { field: 'scale', header: 'scale' },
+      { field: 'scenario', header: 'scenario' },
       { field: 'source', header: 'source' },
-      { field: 'last_modified_date', header: 'last_modified_date' },
-      { field: 'due_date', header: 'due_date' },
-      { field: 'closed_date', header: 'closed_date' },
-      { field: 'approval_status', header: 'approval_status' },
-      { field: 'impact', header: 'impact' },
-      { field: 'urgency', header: 'urgency' },
-      { field: 'category', header: 'category' },
-      { field: 'sub_category', header: 'sub_category' },
-      { field: 'item', header: 'item' },
-      { field: 'child_ticket', header: 'child_ticket' },
+      { field: 'updatedAt', header: 'updatedAt' },
+      { field: 'uploaded_by', header: 'uploaded_by' },
+      { field: 'uploaded_date', header: 'uploaded_date' },
+      { field: 'year', header: 'year'},
     ];
     this._selectedColumns = [
-      { field: 'requester', header: 'requester' },
-      { field: 'subject', header: 'subject' },
-      { field: 'created_date', header: 'created_date' },
+      { field: 'band1_salary_id', header: 'band1_salary_id' },
+      { field: 'chola_period', header: 'chola_period' },
+      { field: 'cc', header: 'cc' },
+      { field: 'data', header:'data'}
     ];
   }
   @Input() get selectedColumns(): any[] {
@@ -164,11 +175,15 @@ export class TicketComponent implements OnInit, AfterViewInit {
   editTicket(ticket: any) {
     // this.editTicketScreen = true;
     this.header = ticket.id;
-    this.router.navigate(['/dashboard/tickets', ticket.id]);
+    this.router.navigate(['/dashboard/records', ticket.id]);
   }
   menuClick(e: any) {
     console.log(e);
     // this.menuItemDisplay = true;
     this.op.show(e, this.actualtarget);
   }
+
+
+
+
 }

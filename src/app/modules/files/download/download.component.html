@@ -1,0 +1,100 @@
+<!-- <button pButton type="button" label="Download" pRipple (click)="addSingle()"></button>
+<p-toast></p-toast>
+
+
+   -->
+
+   <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Bootstrap core JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Page level plugin JavaScript-->
+	<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+	<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+
+   <div class="container">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr class="text-capitalize text-center">
+                <th>University Name</th>
+                <th>Program</th>
+                <th>Country</th>
+                <th>Course</th>
+                <th>Application Date</th>
+                <th>Application Status</th>
+                <th>Payment Status</th>
+            </tr>
+        </thead>
+        <tbody class="text-capitalize text-center" style="font-weight: 600;">
+        <tr>
+            <td>IRTT</td>
+            <td>B.Tech</td>
+            <td>India</td>
+            <td>IT</td>
+            <td>24-08-2020</td>
+            <td>Accepted</td>
+            <td>Completed</td>
+        </tr>
+        <tr>
+            <td>PSG Tech</td>
+            <td>BE</td>
+            <td>India</td>
+            <td>ECE</td>
+            <td>20-08-2020</td>
+            <td>Pending Approval</td>
+            <td>Pending</td>
+        </tr>
+        <tr>
+            <td>Oxford University</td>
+            <td>D.Phil</td>
+            <td>UK</td>
+            <td>Anthropology</td>
+            <td>15-08-2020</td>
+            <td>Rejected</td>
+            <td>Failed</td>
+        </tr>
+        <tr>
+            <td>University of Heisenberg</td>
+            <td>BA</td>
+            <td>germany</td>
+            <td>economics</td>
+            <td>30-08-2020</td>
+            <td>Pending Approval</td>
+            <td>pending</td>
+        </tr>
+        <tr>
+            <td>University of malaysia</td>
+            <td>D.Phil</td>
+            <td>malaysia</td>
+            <td>Anthropology</td>
+            <td>01-09-2020</td>
+            <td>Rejected</td>
+            <td>Failed</td>
+        </tr>
+        <tr>
+            <td>University of melbourne</td>
+            <td>D.Phil</td>
+            <td>Austraila</td>
+            <td>economics</td>
+            <td>20-08-2020</td>
+            <td>Pending Approval</td>
+            <td>pending</td>
+        </tr>
+        </tbody>
+        <script>
+            $(function () {
+                $('#dataTable').DataTable({
+                  "pageLength": 3,
+                  "paging": true,
+                  "lengthChange": false,
+                  "searching": true,
+                  "ordering": true,
+                  "info": true,
+                  "autoWidth": false
+                  });
+              });
+            </script> 

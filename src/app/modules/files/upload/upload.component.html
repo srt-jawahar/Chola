@@ -1,0 +1,83 @@
+
+<!-- <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" /> -->
+
+<p-tabView class="dark-panel" (onChange)="handleChange($event)">
+  <p-tabPanel header="Upload" leftIcon="pi pi-fw pi-upload">
+
+
+    
+<p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="dname" [showClear]="false" (onChange)="onChange($event)"></p-dropdown>
+<br>
+
+
+<!-- <input type="file" placeholder="Select File" style="margin-top: 5px;" [disabled]='citynames'> -->
+<!-- <p-progressSpinner ></p-progressSpinner> -->
+<div class="loading"> <mat-spinner *ngIf="isLoading | async"></mat-spinner></div>
+
+
+
+
+    <!-- <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="dname" (onChange)="onChange($event)" [showClear]="false"></p-dropdown>
+    <p-toast></p-toast> -->
+    <!-- <input type="file" [disabled]="hasFile" (change)="selectFile($event)"> -->
+    <!-- <p-fileUpload #fubauto mode="basic" name="demo[]" accept="image/*" (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="Browse" [disabled]="!selectedCity1"></p-fileUpload> -->
+
+    <!-- <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="dname" optionDisabled="inactive"></p-dropdown> -->
+    <!-- <p-dropdown [options]="cities" [virtualScroll]="true"></p-dropdown> -->
+      <p-toast></p-toast>
+  <div class="container" *ngIf="!citynames">
+    <div class="row">
+      <div class="col-8">
+        <label class="btn btn-default p-0">
+          <input type="file" (change)="selectFile($event)" />
+        </label>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload($event)">
+          Upload
+        </button>
+      </div>
+    </div>
+    <!-- <div *ngIf="currentFile" class="progress my-3">
+      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+        attr.aria-valuenow="{{ progress}}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress + '%' }">
+        {{ progress }}%
+      </div> 
+    </div>-->
+    <div *ngIf="message" class="alert alert-secondary" role="alert">{{ message }}</div>
+    <!-- <div class="card mt-3">
+      <div class="card-header">List of Files</div>
+      <ul class="list-group list-group-flush" *ngFor="let file of fileInfos | async">
+        <li class="list-group-item">
+          <a href="{{ file.url }}">{{ file.name }}</a>
+        </li>
+      </ul>
+    </div> -->
+  </div>
+
+  <!-- <p-toast></p-toast>
+
+    <div class="card">
+        <h5>Advanced</h5>
+        <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="upload()"
+                accept="image/*">
+                <ng-template pTemplate="content">
+                    <ul *ngIf="uploadedFiles.length">
+                        <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                    </ul>
+                </ng-template>
+        </p-fileUpload>
+    </div> -->
+
+</p-tabPanel>
+<p-tabPanel header="Source-Data">
+  <app-demo-file-system></app-demo-file-system>
+</p-tabPanel>
+<p-tabPanel header="Download" leftIcon="pi pi-fw pi-download">
+  <!-- <app-download></app-download> -->
+  <!-- <app-change-password></app-change-password> -->
+  <app-download></app-download>
+</p-tabPanel>
+
+
+</p-tabView>

@@ -1,60 +1,25 @@
-<div class="grid p-4" style="margin-right: 0">
-  <div class="col-2 content shadow-2 onhover">
-    <span class="grid-item-content"
-      >Tickets Due Today<br /><span class="score">119</span></span
-    >
-  </div>
-  <div class="col-2 content shadow-2 onhover">
-    <span class="grid-item-content"
-      >Open Tickets<br /><span class="score">29</span></span
-    >
-  </div>
+<div class="grid p-6" style="margin-right: 0">
   <div
-    class="col-2 content shadow-2 onhover"
+    class="col-6 content shadow-2 onhover"
     style="background: #ffecf0 !important; border: 1px solid #ffd0d6"
   >
     <span class="grid-item-content"
-      >Overdue Tickets<br /><span class="score">34</span></span
+      >Home Loans<br /><span class="score">34</span></span
     >
   </div>
-  <div class="col-2 content onhover">
+  <div class="col-6 content onhover">
     <span class="grid-item-content"
-      >Tickets On Hold<br /><span class="score">19</span></span
+      >Loan Against Property<br /><span class="score">19</span></span
     >
   </div>
-  <div
-    class="col-2 content shadow-2 onhover"
-    style="background: #ffecf0 !important; border: 1px solid #ffd0d6"
-  >
-    <span class="grid-item-content"
-      >Unassigned Tickets<br /><span class="score">50</span></span
-    >
-  </div>
-  <div class="col-2 content shadow-2 onhover">
-    <span class="grid-item-content"
-      >Tickets I'm Watching<br /><span class="score">01</span></span
-    >
-  </div>
-  <div class="col-4 chart shadow-1">
+  
+  <div class="col-4 chart shadow-1" style="background: #ffecf0 !important; border: 1px solid #ffd0d6">
     <div class="widget-title-content">
-      Unresolved Tickets by Priority
+      Motor Insurance
       <button
         pButton
         type="button"
-        label="View"
-        class="slim-button"
-        (click)="ticketByPriority()"
-      ></button>
-      <app-chartdonut></app-chartdonut>
-    </div>
-  </div>
-  <div class="col-4 chart shadow-1">
-    <div class="widget-title-content">
-      Unresolved Tickets by Status
-      <button
-        pButton
-        type="button"
-        label="View"
+        label="Expand"
         class="slim-button"
         (click)="ticketByStatus()"
       ></button>
@@ -74,27 +39,65 @@
   </div>
   <div class="col-4 chart shadow-1">
     <div class="widget-title-content">
-      New & My Open Tickets
-      <button pButton type="button" label="View" class="slim-button"></button>
+      Health Insurance
+      <button pButton type="button" label="Expand" class="slim-button" (click)="healthCharts()"></button>
     </div>
-    <div>
-      <label>low</label>
+    <div style="margin-top: 10px;">
+      <label class="health-list">Arogya Sanjeevani</label>
       <p-progressBar></p-progressBar>
     </div>
-    <div style="padding-top: 1rem">
-      <label>high</label>
+    <div style="padding-top: 1rem; margin-top: 10px;">
+      <label>Chola Healthline</label>
       <p-progressBar [value]="40" unit=""></p-progressBar>
     </div>
-    <div style="padding-top: 1rem">
-      <label>medium</label>
-      <p-progressBar></p-progressBar>
+    <div style="padding-top: 1rem; margin-top: 10px;">
+      <label>Accident Protection</label>
+      <p-progressBar [value]="10" unit=""></p-progressBar>
     </div>
-    <div style="padding-top: 1rem">
-      <label>urgent</label>
-      <p-progressBar></p-progressBar>
+    <div style="padding-top: 1rem; margin-top: 10px;">
+      <label>Corona Rakshak</label>
+      <p-progressBar [value]="30" unit=""></p-progressBar>
     </div>
   </div>
 </div>
+
+
+<p-sidebar
+  #sidebar
+  [(visible)]="viewHealthChart"
+  position="right"
+  [style]="{ width: '45rem' }"
+  [showCloseIcon]="false"
+>
+  <p-panel>
+    <ng-template pTemplate="header">
+      Loan Against Property
+    </ng-template>
+    <ng-template pTemplate="icons">
+      <button
+        pButton
+        class="p-panel-header-icon"
+        (click)="sidebar.close($event)"
+      >
+        <span class="pi pi-times"></span>
+      </button>
+    </ng-template>
+    <p-table [value]="healthChart">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Priority</th>
+          <th>tickets</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-healthChart>
+        <tr>
+          <td>{{ healthChart.type }}</td>
+          <td>{{ healthChart.count }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-panel>
+</p-sidebar>
 
 <p-sidebar
   #sidebar
@@ -104,7 +107,7 @@
   [showCloseIcon]="false"
 >
   <p-panel>
-    <ng-template pTemplate="header"> Unresolved Tickets by Status </ng-template>
+    <ng-template pTemplate="header"> Motor Insurance</ng-template>
     <ng-template pTemplate="icons">
       <button
         pButton
@@ -130,39 +133,7 @@
     </p-table>
   </p-panel>
 </p-sidebar>
-<p-sidebar
-  #sidebar
-  [(visible)]="viewPriorityChart"
-  position="right"
-  [style]="{ width: '45rem' }"
-  [showCloseIcon]="false"
->
-  <p-panel>
-    <ng-template pTemplate="header">
-      Unresolved Tickets by Priority
-    </ng-template>
-    <ng-template pTemplate="icons">
-      <button
-        pButton
-        class="p-panel-header-icon"
-        (click)="sidebar.close($event)"
-      >
-        <span class="pi pi-times"></span>
-      </button>
-    </ng-template>
-    <p-table [value]="prioritytickets">
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Priority</th>
-          <th>tickets</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-priorityticket>
-        <tr>
-          <td>{{ priorityticket.priority }}</td>
-          <td>{{ priorityticket.tickets }}</td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </p-panel>
-</p-sidebar>
+
+<!--  -->
+
+

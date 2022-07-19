@@ -52,6 +52,9 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { SidebarModule } from 'primeng/sidebar';
 import { TableModule } from 'primeng/table';
 
+
+// DOWNLOAD FILE 
+
 import { MultiSelectModule } from 'primeng/multiselect';
 
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -98,6 +101,13 @@ import { ScrollTopModule } from 'primeng/scrolltop';
 import { ProgressBarModule } from 'primeng/progressbar';
 
 import { ChartdonutComponent } from './modules/dashboard/components/chartdonut/chartdonut.component';
+import { UploadComponent } from './modules/files/upload/upload.component';
+import { DownloadComponent } from './modules/files/download/download.component';
+import { MessageService } from 'primeng/api';
+import { DemoFileSystemComponent } from './modules/files/demo-file-system/demo-file-system.component';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 export function clearState(
   reducer: (arg0: any, arg1: { type: string }) => any
@@ -146,6 +156,9 @@ export function clearState(
     UserComponent,
     AddUserComponent,
     ChartdonutComponent,
+    UploadComponent,
+    DownloadComponent,
+    DemoFileSystemComponent,
   ],
   imports: [
     BrowserModule,
@@ -163,6 +176,8 @@ export function clearState(
     AutoCompleteModule,
     CascadeSelectModule,
     ImageModule,
+ProgressSpinnerModule,
+    
     ToggleButtonModule,
     InputSwitchModule,
     DividerModule,
@@ -196,11 +211,12 @@ export function clearState(
     TieredMenuModule,
     ListboxModule,
     ChartModule,
-    ScrollTopModule,
     ProgressBarModule,
-
+    ScrollTopModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}, { metaReducers: [clearState] }),
+
     StoreDevtoolsModule.instrument({
       name: 'Ticket Management Application',
       maxAge: 25,
@@ -219,6 +235,7 @@ export function clearState(
       useClass: MainInterceptor,
       multi: true,
     },
+    MessageService,
   ],
   bootstrap: [AppComponent],
 })
